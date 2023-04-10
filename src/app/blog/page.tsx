@@ -3,7 +3,7 @@ import React from "react";
 import { readdir } from "fs/promises";
 
 export default async function BlogPage() {
-  const nodes = await readdir("app/blog/(posts)", { withFileTypes: true });
+  const nodes = await readdir("src/app/blog/(posts)", { withFileTypes: true });
   const files = nodes.filter((node) => node.isDirectory());
   const posts = await Promise.all(
     files.map(async (file) => {
